@@ -1,4 +1,4 @@
--- Create database 'Challenge 1'
+-- Create database 'Steel_Challenge2'
 
 create database Steel_Challenge2;
 
