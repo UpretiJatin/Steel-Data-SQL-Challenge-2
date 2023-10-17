@@ -1,4 +1,8 @@
+-- Create database 'Challenge 1'
+
 create database Steel_Challenge2;
+
+-- Make database as default
 
 use Steel_Challenge2;
 
@@ -76,15 +80,6 @@ select player_name, salary from players
 where salary > 100000;
 
 
-
-
-
-
-
-
-
-
-
 /*Question 2. What is the team name of the player with player_id = 3?*/
 
 select p.player_id, t.team_name from players p 
@@ -92,24 +87,11 @@ inner join teams t using(team_id)
 where p.player_id = 3;
 
 
-
-
-
-
-
-
-
-
 /*Question 3. What is the total number of players in each team?*/
 
 select t.team_name, count(t.team_id) as Total_players from players p 
 inner join teams t using(team_id)
 group by t.team_name;
-
-
-
-
-
 
 
 /*Question 4. What is the team name and captain name of the team with team_id = 2?*/
@@ -124,9 +106,6 @@ where t.team_id = 2 and p.player_id = t.captain_id;
 select p.player_name, p.role from players p 
 inner join teams t using(team_id)
 where team_id = 1;
-
-
-
 
 
 /*Question 6. What are the team names and the number of matches they have won?*/
@@ -145,7 +124,6 @@ where t.country = "USA"
 group by t.team_name;
 
 
-
 /*Question 8. Which team won the most matches?*/
 
 select t.team_name, count(m.winner_id) as Matches_won from matches m
@@ -154,15 +132,12 @@ group by t.team_name
 order by count(m.winner_id) desc limit 1;
 
 
-
 /*Question 9. What are the team names and the number of players in each team whose salary is greater than 100,000?*/
 
 select t.team_name, count(p.player_id) as Number_of_Players from teams t
 inner join players p using(team_id)
 where p.salary > 100000
 group by t.team_name;
-
-
 
 
 /*Question 10. What is the date and the score of the match with match_id = 3?*/
